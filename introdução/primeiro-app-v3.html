@@ -3,6 +3,7 @@
 <div id='app'>
   <h3> {{ welcome() }} </h3>
   <p>{{ hello() }}</p>
+  <p> Follow me on <a style="text-decoration: none;" target="_blank" v-bind:href="github">My Github</a>, <a style="text-decoration: none;" target="_blank" v-bind:href="noobCode">YouTube - Noob Code</a>  and on <a style="text-decoration: none;" target="_blank" v-bind:href="instagram">Instagram</a> </p>
 </div>
 
 <script>
@@ -10,7 +11,10 @@
     el: '#app',
     data: {
       title: "My first VueJS app",
-      name: "Diego"
+      name: "Diego",
+      github: "https://github.com/diegoshakan",
+      noobCode: "https://www.youtube.com/channel/UCE7utsNu7u7HqoZDT2OdUiA",
+      instagram: "https://www.instagram.com/diegoshakan/"
     },
     methods: {
       welcome(){
