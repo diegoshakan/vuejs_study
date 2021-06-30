@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id='app'>
+  <p>{{ contador }}</p>
+  <button v-on:click="somar(x, $event)">mais x mouse</button> <button v-on:click="subtrair(y, $event)">menos y mouse</button>
+  <p v-on:mousemove="atualizarXY">mouse x = {{ x }} e y = {{ y }}</p>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      contador: 0,
+      x: 0,
+      y: 0
+    },
+    methods: {
+        somar(number, event){ // event here is an example of how use it
+            this.contador += number
+        },
+				subtrair(number, event){ // event here is an example of how use it
+            this.contador -= number
+        },
+        atualizarXY(event){
+          console.log(event)
+          this.x = event.clientX
+          this.y = event.clientY
+        }
+    }
+  })
+</script>
