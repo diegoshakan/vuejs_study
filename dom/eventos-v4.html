@@ -13,6 +13,8 @@
   <p>
     <a href="http://github.com/diegoshakan" target="_blank">Meu Github</a>
   </p>
+  <hr>
+  <input type="text" v-on:keyup.enter="alertShow">
 </div>
 
 <script>
@@ -34,6 +36,9 @@
           console.log(event)
           this.x = event.clientX
           this.y = event.clientY
+        },
+        alertShow(event){
+          alert('Você pressiounou Enter!')
         }
     }
   })
