@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+  <ul>
+    <li v-for="(nome, id) in nomes"> {{ nome }}, {{ id + 1}} </li>
+  </ul>
+  <hr>
+  <ul>
+    <li v-for="dado in dados"> Nome: {{ dado.nome }}, Idade: {{ dado.idade }} </li>
+  </ul>
+  <hr>
+  <ul>
+    <li v-for="dado in dados">
+      <p v-for="(valor, chave) in dado"> {{ chave }}: {{ valor }} </p>
+    </li>
+  </ul>
+</div>
+
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			nomes: ["Diego", "Kassandra", "Aimée", "Abner"],
+      dados: [
+        { nome: "Diego", idade: 36 },
+        { nome: "Kassandra", idade: 37 },
+        { nome: "Aimée", idade: 8 },
+        { nome: "Abner", idade: 5 },
+      ]
+		}
+	})
+</script>
